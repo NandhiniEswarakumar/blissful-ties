@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Blissful ties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            transition: .5s linear;
+            scroll-behavior: smooth;
+        }
+        
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #213555;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 9%;
+        }
+
+        .header .logo {
+            color: aliceblue;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        .header .logo span {
+            color: goldenrod;
+        }
+
+        .header .navbar a {
+            font-size: 1.3rem;
+            color: aliceblue;
+            margin-left: 3rem;
+        }
+
+        .header .navbar a:hover {
+            color: black;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('Reception.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); 
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtext {
+            position: relative;
+            z-index: 2;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFD700; 
+        }
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10rem 9%;
+            background-color: #3E5879;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .about-content {
+            flex: 1;
+            max-width: 70%;
+        }
+
+        .about-section h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .about-section span {
+            color: goldenrod;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #D8C4B6;
+            text-align: left;
+            max-width: 800px;
+        }
+
+        .about-section p span {
+            color: #FFD700;
+            font-size: 1.4rem;
+        }
+
+        .carousel {       
+            position: relative;
+            width: 400px; 
+            height: 500px; 
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .carousel img {
+            width: 90%;
+            height: 500%;
+            object-fit: cover; 
+            flex: 0 0 100%;
+            margin-top: 0px;
+            
+        }
+
+
+
+        .slider {
+            display: flex;
+            animation: slide 21s infinite;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            background-size: contain; 
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        @keyframes slide {
+            0%, 14.28% { transform: translateX(0%); }
+            14.29%, 28.56% { transform: translateX(-100%); }
+            28.57%, 42.84% { transform: translateX(-200%); }
+            42.85%, 57.12% { transform: translateX(-300%); }
+            57.13%, 71.4% { transform: translateX(-400%); }
+            71.41%, 85.68% { transform: translateX(-500%); }
+            85.69%, 100% { transform: translateX(-600%); }
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-content, .slider {
+                max-width: 100%;
+            }
+        }
+        .service-section {
+        padding: 6rem 9%;
+        background-color: #3E5879;
+        text-align: center;
+    }
+
+    .service-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        color: white;
+    }
+
+    .service-title span {
+        color: goldenrod;
+    }
+
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        box-shadow: none;
+
+    }
+    
+    .service-item {
+        background: white;
+        padding: 2rem; 
+        border-radius: 10px;
+        border: 3px solid goldenrod; 
+        box-shadow: none;
+        text-align: center;
+        width: 100%;
+        max-width: 300px; 
+        height: 460px;
+        margin: 3rem; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .service-item video {
+        width: 100%;
+        height: 400px;
+        max-width: 800px;
+        box-shadow: none;
+        border-radius: 10px;
+        background: none;
+        
+    }
+
+    .service-item h3 {
+        margin-top: 2rem;
+        font-size: 1.7rem;
+        color:goldenrod;
+        
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }
+    @media (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .service-grid {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+/* Price Section */
+.Price-section {
+    padding: 6rem 9%;
+    background-color: #3E5879;
+    color: black;
+    text-align: center;
+}
+
+.price-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5rem;
+    color: black;
+}
+
+.price-table {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.price-table th,
+.price-table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+.price-table th {
+    background-color: #213555;
+    color: goldenrod;
+    font-size: 1.3rem;
+}
+
+.price-table td {
+    background-color: #F9F9F9;
+    font-size: 1.2rem;
+}
+
+.price-table tr:nth-child(even) {
+    background-color: black;
+}
+
+.price-table td ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.price-table td ul li {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.price-table td ul li::before {
+    content: "\2022"; /* Bullet point */
+    color: #e154c4;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+
+.price-table td button:hover {
+    background-color: #213555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .price-table th,
+    .price-table td {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .price-table {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo"><span>Blissful</span>Ties</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#">Our Gallery</a>
+            <a href="#Price">Price</a>
+            <a href="#">Review</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <h2 class="hero-text">Let Us Manage Every Detail Of Your Special Day!</h2>
+        <h3 class="hero-subtext">Your Dream Wedding, Our Expertise.</h3>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About <span>Us</span></h2>
+            <p>
+                At <span><strong>Blissful Ties</strong></span>, we believe that every love story deserves a magical beginning. 
+                As expert wedding event organizers, we specialize in crafting unforgettable moments, ensuring that your big day 
+                is stress-free, seamless, and truly special.
+            </p>
+            <p>
+                With years of experience in wedding planning, we take pride in transforming dreams into reality. 
+                From elegant décor and venue selection to catering, entertainment, and coordination, we handle every detail with perfection. 
+                Whether you envision an intimate ceremony or a grand celebration, our dedicated team brings creativity, passion, 
+                and precision to make your wedding a cherished memory.
+            </p>
+            <p>
+                Let us take care of the details while you enjoy every moment of your journey. Your dream wedding starts here!
+            </p>
+        </div>
+        <div class="carousel">
+            <div class="slider">
+                <img src="south indian.jpg" alt="Wedding Event 1">
+                <img src="hang.jpg" alt="Wedding Event 2">
+                <img src="pillar.jpg" alt="Wedding Event 3">
+                <img src="download (1).jpg" alt="Wedding Event 4">
+                <img src="choco.jpg" alt="Wedding Event 5">
+                <img src="floor.jpg" alt="Wedding Event 6">
+                <img src="wall.jpg" alt="Wedding Event 7">
+            </div>
+        </div>
+        <section id="services" class="service-section">
+            <h2 class="service-title">Our <span>Services</span></h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <video controls >
+                        <source src="stage.mp4" type="video/mp4">
+                        
+                    </video>
+                    <h3>Venue Setup</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="video 4.mp4" type="video/mp4">
+                        
+                    </video>
+                    <h3>Stage Setup</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="cantering video.mp4" type="video/mp4">
+                        
+                    </video>
+                    <h3>Catering Services</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="bridal makeeup.mp4" type="video/mp4">
+                    </video>
+                    <h3>Bridal Makeup</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="photography.mp4" type="video/mp4">
+                    </video>
+                    <h3>Photography</h3>
+                </div>
+                <div class="service-item">
+                    <video controls>
+                        <source src="mehandi.mp4" type="video/mp4">
+                    </video>
+                    <h3>Mehandi</h3>
+                </div>
+            </div>
+        </section>
+        <section id="Price" class="Price-section">
+            <h2 class="price-title">Our Wedding Packages & Pricing</h2>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Description</th>
+                        <th>Prices</th>
+                        <th>Inclusions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic Packages</td>
+                        <td>Perfect for small weddings with limited requiremnts</td>
+                        <td>$50,000</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    Venue setup
+                                </li>
+                                <li>Basic Decoration</li>
+                                <li>Catering for 100 guests</li>
+                                <li>Photography</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Premium Package</td>
+                        <td>For a more elegant and detailed wedding celebration.</td>
+                        <td>$1,50,000</td>
+                        <td>
+                            <ul>
+                                <li>Venue Setup</li>
+                                <li>Custom Decorations</li>
+                                <li>Catering for 400 guests</li>
+                                <li>Photography + Videography</li>
+                                <li>Bridal Makeup & Styling</li>
+                            </ul>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>Luxury Package</td>
+                            <td>For those who want a truly lavish wedding experience.</td>
+                            <td>$2,00,000</td>
+                            <td>
+                                <ul>
+                                    <li>Venue Setup</li>
+                                    <li>Exclusive Decor & Themes</li>
+                                    <li>catering for 1000 guests</li>
+                                    <li>Photography and videography</li>
+                                    <li>Bridal Makeup, Hair and Styling</li>
+                                    <li>Mehandi</li>
+                                    </ul>
+                                    </td>
+                        </tr>
+                       
+
+
+                </tbody>
+            </table>
+        </section>
+        
+
+
+</body>
+</html>

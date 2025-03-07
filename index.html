@@ -6,455 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Blissful ties</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-        * {
-            font-family: "Poppins", sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            transition: .5s linear;
-            scroll-behavior: smooth;
-        }
-        body, html {
-            width: 100%;
-            height: 100%;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #213555;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 9%;
-        }
-
-        .header .logo {
-            color: aliceblue;
-            font-weight: bold;
-            font-size: 2rem;
-        }
-
-        .header .logo span {
-            color: goldenrod;
-        }
-
-        .header .navbar a {
-            font-size: 1.3rem;
-            color: aliceblue;
-            margin-left: 3rem;
-        }
-
-        .header .navbar a:hover {
-            color: black;
-        }
-        .menu-btn {
-            display: none;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 1rem 5%;
-            }
-
-            .navbar {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #213555;
-                padding: 1rem;
-                text-align: center;
-            }
-
-            .navbar.active {
-                display: flex;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-        }
-
-
-
-        .hero-section {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: url('Reception.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); 
-        }
-
-        .hero-text {
-            position: relative;
-            z-index: 2;
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .hero-subtext {
-            position: relative;
-            z-index: 2;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #FFD700; 
-        }
-        @media (max-width: 768px){
-            .header{
-                padding: 1rem 5%;
-            }
-        }
-        .about-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10rem 9%;
-            background-color: #3E5879;
-            color: white;
-            flex-wrap: wrap;
-        }
-
-        .about-content {
-            flex: 1;
-            max-width: 70%;
-        }
-
-        .about-section h2 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-        }
-
-        .about-section span {
-            color: goldenrod;
-        }
-
-        .about-section p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #D8C4B6;
-            text-align: left;
-            max-width: 800px;
-        }
-
-        .about-section p span {
-            color: #FFD700;
-            font-size: 1.4rem;
-        }
-
-        .carousel {       
-            position: relative;
-            width: 400px; 
-            height: 500px; 
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        .carousel img {
-            width: 90%;
-            height: 500%;
-            object-fit: cover; 
-            flex: 0 0 100%;
-            margin-top: 0px;
-            
-        }
-
-
-
-        .slider {
-            display: flex;
-            animation: slide 21s infinite;
-        }
-
-        .slide {
-            flex: 0 0 100%;
-            background-size: contain; 
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        @keyframes slide {
-            0%, 14.28% { transform: translateX(0%); }
-            14.29%, 28.56% { transform: translateX(-100%); }
-            28.57%, 42.84% { transform: translateX(-200%); }
-            42.85%, 57.12% { transform: translateX(-300%); }
-            57.13%, 71.4% { transform: translateX(-400%); }
-            71.41%, 85.68% { transform: translateX(-500%); }
-            85.69%, 100% { transform: translateX(-600%); }
-        }
-
-        @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .about-content, .slider {
-                max-width: 100%;
-            }
-        }
-        .service-section {
-            padding: 6rem 9%;
-            background-color: #3E5879;
-            text-align: center;
-        }
-
-        .service-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            color: white;
-        }
-
-        .service-title span {
-            color: goldenrod;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            align-items: center;
-            box-shadow: none;
-        }
-    
-        .service-item {
-            background: white;
-            padding: 2rem; 
-            border-radius: 10px;
-            border: 3px solid goldenrod; 
-            box-shadow: none;
-            text-align: center;
-            width: 100%;
-            max-width: 300px; 
-            height: 460px;
-            margin: 3rem; 
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service-item video {
-            width: 100%;
-            height: 400px;
-            max-width: 800px;
-            box-shadow: none;
-            border-radius: 10px;
-            background: none;
-        }
-
-        .service-item h3 {
-            margin-top: 2rem;
-            font-size: 1.7rem;
-            color:goldenrod;
-            overflow: hidden;
-            white-space: nowrap;
-            width: 100%;
-        }
-        @media (max-width: 768px) {
-            .service-grid {
-                grid-template-columns: repeat(2, 1fr); 
-            }
-        }
-
-        @media (max-width: 480px) {
-            .service-grid {
-                grid-template-columns: repeat(1, 1fr); 
-            }
-        }
-
-        .Price-section {
-            padding: 6rem 9%;
-            background-color: #3E5879;
-            color: black;
-            text-align: center;
-        }
-
-        .price-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 5rem;
-            color: black;
-        }
-
-        .price-table {
-            width: 100%;
-            margin-top: 2rem;
-            border-collapse: collapse;
-            text-align: left;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: black;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .price-table th,
-        .price-table td {
-            padding: 15px;
-            text-align: left;
-            border: 1px solid black;
-        }
-
-        .price-table th {
-            background-color: #213555;
-            color: goldenrod;
-            font-size: 1.3rem;
-        }
-
-        .price-table td {
-            background-color: #F9F9F9;
-            font-size: 1.2rem;
-        }
-
-        .price-table tr:nth-child(even) {
-            background-color: black;
-        }
-
-        .price-table td ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .price-table td ul li {
-            font-size: 1.1rem;
-            margin: 5px 0;
-        }
-
-        .price-table td ul li::before {
-            content: "\2022"; 
-            color: #e154c4;
-            font-size: 1.5rem;
-            margin-right: 10px;
-        }
-
-
-        .price-table td button:hover {
-            background-color: #213555;
-        }
-
-
-        @media (max-width: 770px) {
-            .price-table th,
-            .price-table td {
-                font-size: 1rem;
-                padding: 10px;
-            }
-
-            .price-table {
-                margin: 0;
-                padding: 0;
-            }
-        }
-        .linkedin-btn {
-            position: relative;
-            z-index: 2;
-            background-color: white;
-            color: black;
-            padding: 5px 6px;
-            font-size: 1.8rem;
-            border-radius: 5px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 80px;
-        }
-
-        .linkedin-btn:hover {
-            background-color: #3E5879;
-            color: white;
-        }
-        .contact-section {
-            padding: 6rem 9%;
-            background-color: #3E5879;
-            color: white;
-            text-align: center;
-            margin-left: 200px;
-        }
-
-        .contact-section h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            color: goldenrod;
-        }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .contact-info {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            display: flex;
-    flex-direction: column;
-    align-items: center;
-        }
-
-        .contact-info i {
-            color: goldenrod;
-            margin-right: 10px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            background-color: goldenrod;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            cursor: pointer;
-           
-            
-        }
-
-        .contact-form button:hover {
-            background-color: #FFD700;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class = "homepage">
     <header class="header">
         <a href="#" class="logo"><span>Blissful</span>Ties</a>
         <div class="menu-btn" onclick="toggleMenu()">
@@ -466,8 +20,7 @@
             <a href="#services">Services</a>
             <a href="#">Our Gallery</a>
             <a href="#Price">Price</a>
-            <a href="#">Review</a>
-            <a href="#">Book now</a>
+            <a href="#Contact">Contact</a>
         </nav>
 
     </header>
@@ -475,9 +28,6 @@
     <section class="hero-section">
         <h2 class="hero-text">Let Us Manage Every Detail Of Your Special Day!</h2>
         <h3 class="hero-subtext">Your Dream Wedding, Our Expertise.</h3>
-        <a href="https:www.linkedin.com/in/nandhini-eswarakumar15" target="_blank" class="linkedin-btn">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
     </section>
     <section id="about" class="about-section">
         <div class="about-content">
@@ -558,6 +108,7 @@
                         <th>Description</th>
                         <th>Prices</th>
                         <th>Inclusions</th>
+                        <th>Book package</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -575,6 +126,11 @@
                                 <li>Photography</li>
                             </ul>
                         </td>
+                        <td> 
+                            <a href="about.html">
+                                <button class="book-now">Book Now</button>
+                            </a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Premium Package</td>
@@ -589,6 +145,11 @@
                                 <li>Bridal Makeup & Styling</li>
                             </ul>
                         </td>
+                        <td> 
+                            <a href="about.html">
+                                <button class="book-now">Book Now</button>
+                            </a>
+                        </td>
                         </tr>
                         <tr>
                             <td>Luxury Package</td>
@@ -602,19 +163,24 @@
                                     <li>Photography and videography</li>
                                     <li>Bridal Makeup, Hair and Styling</li>
                                     <li>Mehandi</li>
-                                    </ul>
-                                    </td>
+                                </ul>
+                            </td>
+                            <td> 
+                                <a href="about.html">
+                                    <button class="book-now">Book Now</button>
+                                </a>
+                            </td>
                         </tr>
                 </tbody>
             </table>
         </section>
-        <section id="contact" class="contact-section">
+        <section id="Contact" class="contact-section">
             <h2>Contact <span>Us</span></h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> Phone: +1 234 567 890</p>
+                    <p><i class="fas fa-phone"></i> Phone: +91 9043626614</p>
                     <p><i class="fas fa-envelope"></i> Email: info@blissfulties.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Address: 123 Wedding St, City, Country</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: 123 Wedding Street, Harur, Uthangarai</p>
                 </div>
                 <form class="contact-form">
                     <input type="text" name="name" placeholder="Your Name" required>
